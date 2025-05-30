@@ -33,6 +33,7 @@ class OllamaMetadataExtractor:
                 ["ollama", "list"], 
                 capture_output=True, 
                 text=True, 
+                encoding="utf-8",  # Specify UTF-8 encoding 
                 check=False
             )
             
@@ -46,7 +47,8 @@ class OllamaMetadataExtractor:
                 print(f"Model {self.model_name} not found in Ollama. Attempting to pull it...")
                 subprocess.run(
                     ["ollama", "pull", self.model_name], 
-                    check=False
+                    check=False,
+                    encoding="utf-8"  # Add UTF-8 encoding here
                 )
         except Exception as e:
             print(f"Error checking Ollama installation: {e}")
@@ -69,7 +71,8 @@ class OllamaMetadataExtractor:
             result = subprocess.run(
                 ["ollama", "run", self.model_name, prompt], 
                 capture_output=True, 
-                text=True, 
+                text=True,
+                encoding="utf-8",  # Specify UTF-8 encoding
                 check=False
             )
             
@@ -200,7 +203,7 @@ JSON response:
                 "Sports": ["sports", "cricket", "football", "player", "match", "क्रीडा", "क्रिकेट", "फुटबॉल", "खेळाडू", "सामना"],
                 "Entertainment": ["entertainment", "movie", "film", "actor", "music", "मनोरंजन", "चित्रपट", "अभिनेता", "संगीत"],
                 "Business": ["business", "company", "market", "economy", "finance", "व्यापार", "कंपनी", "बाजार", "अर्थव्यवस्था", "वित्त"],
-                "Technology": ["technology", "software", "digital", "computer", "internet", "तंत्रज्ञान", "सॉफ्टवेअर", "डिजिटल", "संगणक", "इंटरनेट"],
+                "Technology": ["technology", "software", "digital", "computer", "internet", "तंत्रज्ञान", "सॉफ्यवेअर", "डिजिटल", "संगणक", "इंटरनेट"],
                 "Health": ["health", "hospital", "doctor", "disease", "medical", "आरोग्य", "रुग्णालय", "डॉक्टर", "आजार", "वैद्यकीय"],
                 "Education": ["education", "school", "university", "student", "exam", "शिक्षण", "शाळा", "विद्यापीठ", "विद्यार्थी", "परीक्षा"],
                 "Environment": ["environment", "climate", "pollution", "nature", "पर्यावरण", "हवामान", "प्रदूषण", "निसर्ग"],
