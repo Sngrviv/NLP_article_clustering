@@ -1,6 +1,6 @@
 # Marathi News Article Clustering
 
-This project provides a user-friendly system for clustering Marathi news articles based on content similarity, with optional LLM-enhanced metadata extraction. It offers both an interactive Streamlit interface and a lightweight command-line pipeline, combining basic NLP techniques with advanced visualization and analysis tools.
+This project provides a user-friendly system for clustering Marathi news articles based on content similarity and contextual meaning, with optional LLM-enhanced metadata extraction. It offers both an interactive Streamlit interface and a lightweight command-line pipeline, combining basic NLP techniques with advanced visualization and analysis tools.
 
 ## Features
 
